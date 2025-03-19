@@ -8,18 +8,8 @@
 <script>
 export default {
   name: 'EventCard',
-  data() {
-    return {
-      event: {
-        id: 11001,
-        category: 'Promotion',
-        title: 'Portes ouvertes',
-        description: 'Présentation des activités de la filière au public',
-        location: 'nos locaux',
-        date: '25 novembre 2024',
-        time: '08:00',
-      },
-    }
+  props: {
+    event: Object,
   },
 }
 </script>

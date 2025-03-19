@@ -1,6 +1,6 @@
 <template>
-  <div class="home">
-    <EventCard />
+  <div class="events">
+    <EventCard v-for="item in events" :event="item" :key="item.id"> </EventCard>
   </div>
 </template>
 
@@ -13,5 +13,48 @@ export default {
   components: {
     EventCard,
   },
+  data() {
+    return {
+      events: [
+        {
+          id: 11101,
+          category: 'Promotion',
+          title: 'Portes ouvertes',
+          description: 'Présentation des activités de la filière au public.',
+          location: 'Nos locaux',
+          date: '2024-11-20',
+          time: '08:00',
+        },
+        {
+          id: 20201,
+          category: 'Loisirs',
+          title: 'Journée ski',
+          description:
+            'Activité neige dans Ste-Croix et à la station des Rasses pour du ski de fond, ski de descente et randonnée.',
+          location: 'Ste-Croix',
+          date: '2025-02-14',
+          time: '08:30',
+        },
+        {
+          id: 30901,
+          category: 'Loisirs',
+          title: 'Semaine spéciale',
+          description:
+            'Voyage à l étranger avec des activités proposées par les élèves.',
+          location: 'Etranger',
+          date: '2025-09-17',
+          time: '06:00',
+        },
+      ],
+    }
+  },
 }
 </script>
+
+<style scoped>
+.events {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+</style>
